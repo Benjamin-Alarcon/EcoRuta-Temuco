@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="pagina-nosotros">
+    <header>
+        <nav id="cont-nav" aria-label="Navegación principal">
+            <a href="index.html" id="logo-link">
+                <img src="../img/logoEcoruta.png" alt="Logo EcoRuta Temuco" id="logo">
+            </a>
+
+            <input type="checkbox" id="menu-toggle" hidden>
+
+            <label for="menu-toggle" id="menu-boton" role="button" aria-label="Abrir menu de navegacion">&#9776;</label>
+
+            <ul id="nav-lista">
+                <li class="boton-nav"><a href="index.html#inicio">Inicio</a></li>
+                <li class="boton-nav"><a href="index.html#experiencias">Experiencias</a></li>
+                <li class="boton-nav"><a href="#destinos">Destinos</a></li>
+                <li class="boton-nav"><a href="index.html#packs">Packs</a></li>
+                <li class="boton-nav"><a href="nosotros.html" aria-current="page">Nosotros</a></li>
+                <li class="boton-nav"><a href="#contacto">Contacto</a></li>
+            </ul>
+
+            <button id="reservaboton" type="button">Reservar ahora</button>
+        </nav>
+    </header>
+
+    <main class="contenido">
+        <div class="ventana-paisaje" aria-hidden="true"></div>
+
+        <section class="presentacion presentacion-unificada" aria-labelledby="titulo-nosotros">
+            <div class="presentacion-contenido">
+                <span class="presentacion-lugar">La Araucanía, Chile</span>
+                <h1 id="titulo-nosotros">¿Quiénes somos?</h1>
+                <p>Somos una plataforma de turismo que conecta a viajeros con agencias y emprendimientos de La Araucanía.</p>
+                <p class="presentacion-resumen">Trabajamos con <strong>más de 60 agencias</strong> en Pucón, Villarrica, Temuco y alrededores.</p>
+                <a href="index.html#experiencias" class="boton">Explorar experiencias</a>
+            </div>
+        </section>
+
+        <article class="fila">
+            <div class="fila-texto">
+                <h2>Misión</h2>
+                <p>Ayudamos tanto a agencias de turismo interesadas en encontrar clientela, 
+                como a los mismos clientes buscando diferentes áreas de turismo dentro de la zona.
+                </p>
+            </div>
+            <figure class="fila-imagen">
+                <img src="../img/mision-nosotros.jpg" alt="Manos juntas de diferentes personas">
+                <figcaption>Unir personas y experiencias</figcaption>
+            </figure>
+        </article>
+
+        <article class="fila">
+            <div class="fila-texto">
+                <h2>Visión</h2>
+                <p>Ser una plataforma unificadora donde turistas de todo tipo y nacionalidades encuentren un lugar unico para planificar y gestionar su 
+                proximo viaje dentro de la novena región de la Araucania de manera sencilla y confiable.</p>
+            </div>
+            <figure class="fila-imagen">
+                <img src="../img/mapa-araucania.png" alt="mapa de Chile">
+                <figcaption>Unidos por Chile y la Región</figcaption>
+            </figure>
+        </article>
+
+        <article class="fila">
+            <div class="fila-texto">
+                <h2>Valores</h2>
+                <p>Solidaridad y respeto con el medio ambiente y los usuarios tanto turistas como emprendedores</p>
+            </div>
+            <figure class="fila-imagen">
+                <img src="../img/familia-camping.jpg" alt="camping familiar en el bosque">
+                <figcaption>Siempre cuidar la naturaleza al viajar</figcaption>
+            </figure>
+        </article>
+
+        <section class="mensaje">
+            <h2>Déjanos un mensaje</h2>
+            <form id="form-mensaje" class="mensaje-form">
+                <label for="texto-mensaje">Tu mensaje</label>
+                <textarea id="texto-mensaje" name="mensaje" rows="4" maxlength"200" placeholder="Escribenos un mensaje"></textarea>
+                <button type="submit" class="boton">Enviar mensaje</button>
+                <p id="aviso-mensaje" class="mensaje-aviso" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer id="contacto" class = "pie">
+        <div class = "pie-contenedor">
+            <div class = "pie-columna">
+                <h4>Contáctanos</h4>
+                <ul>
+                    <li>
+                        <a href="https://instagram.com" target="_blank">
+                            <img src="../img/instagram.jpg" alt="Instagram" class="icono-red"> Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com" target="_blank">
+                            <img src="../img/facebook.jpg" alt="Facebook" class="icono-red"> Facebook
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="pie-columna">
+                <h4>Explora</h4>
+                <ul>
+                    <li><a href="#">Rutas</a></li>
+                    <li><a href="#">Senderos</a></li>
+                    <li><a href="#">Familia</a></li>
+                    <li><a href="#">Camping</a></li>
+                    <li><a href="#">Emprendimientos</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class ="copyright">EcoRuta Temuco</p>
+    </footer>
+</body>
+</html>
