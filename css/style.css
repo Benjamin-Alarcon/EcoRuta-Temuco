@@ -308,7 +308,7 @@ body{
 
 .promo:hover{
     background-color: #254a34;
-    box-shadow: 0 4px 10px (18,40,24,0.3);
+    box-shadow: 0 4px 10px rgba(18,40,24,0.3);
     transform:translateY(-2px);
 }
 
