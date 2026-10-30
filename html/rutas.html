@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutas y Senderos | EcoRuta Temuco</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="pagina-interna">
+    <header>
+        <nav id="cont-nav" aria-label="Navegación principal">
+            <a href="../index.html" id="logo-link">
+                <img src="../img/logoEcoruta.png" alt="Logo EcoRuta Temuco" id="logo">
+            </a>
+
+            <input type="checkbox" id="menu-toggle" hidden>
+
+            <label for="menu-toggle" id="menu-boton" role="button" aria-label="Abrir menu de navegacion">&#9776;</label>
+
+            <ul id="nav-lista">
+                <li class="boton-nav"><a href="../index.html#inicio">Inicio</a></li>
+                <li class="boton-nav"><a href="rutas.html" aria-current="page">Rutas</a></li>
+                <li class="boton-nav"><a href="destinos.html">Destinos</a></li>
+                <li class="boton-nav"><a href="../index.html#experiencias">Experiencias</a></li>
+                <li class="boton-nav"><a href="emprendimientos.html">Emprendimientos</a></li>
+                <li class="boton-nav"><a href="../index.html#packs">Packs</a></li>
+                <li class="boton-nav"><a href="nosotros.html">Nosotros</a></li>
+                <li class="boton-nav"><a href="../index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido">
+        <section class="encabezado-pagina" aria-labelledby="titulo-rutas">
+            <span class="presentacion-lugar">La Araucanía, Chile</span>
+            <h1 id="titulo-rutas">Rutas y senderos</h1>
+            <p>Recorridos reales en Temuco, Pucón, Villarrica y alrededores. Revisa distancia, dificultad y recomendaciones de seguridad antes de salir.</p>
+        </section>
+
+        <section class="filtros" aria-label="Filtros de rutas">
+            <div class="filtros-grupo" role="group" aria-label="Filtrar por dificultad">
+                <span class="filtros-etiqueta">Dificultad</span>
+                <button type="button" class="filtro activo" data-dificultad="todas">Todas</button>
+                <button type="button" class="filtro" data-dificultad="baja">Baja</button>
+                <button type="button" class="filtro" data-dificultad="media">Media</button>
+                <button type="button" class="filtro" data-dificultad="alta">Alta</button>
+            </div>
+
+            <div class="filtros-grupo">
+                <label class="filtros-etiqueta" for="filtro-distancia">Distancia</label>
+                <select id="filtro-distancia" class="filtro-select">
+                    <option value="todas">Todas</option>
+                    <option value="corta">Menos de 5 km</option>
+                    <option value="media">Entre 5 y 10 km</option>
+                    <option value="larga">Más de 10 km</option>
+                </select>
+            </div>
+        </section>
+
+        <p id="sin-resultados" class="sin-resultados" aria-live="polite" hidden>No hay rutas que coincidan con los filtros seleccionados.</p>
+
+        <section class="rejilla" aria-label="Listado de rutas">
+
+            <article class="tarjeta tarjeta-ruta" data-dificultad="baja" data-distancia="4.5">
+                <div class="tarjeta-img">
+                    <img src="../img/araucania.jpg" alt="Bosque nativo en La Araucanía">
+                    <div class="tarjeta-etiquetas">
+                        <span class="etiqueta etiqueta-tipo">Temuco</span>
+                        <span class="etiqueta etiqueta-destacada">Apta para principiantes</span>
+                    </div>
+                    <span class="etiqueta etiqueta-duracion">2 h</span>
+                </div>
+                <div class="tarjeta-cuerpo">
+                    <h2>Cerro Ñielol</h2>
+                    <p>Sendero interpretativo con bosque nativo y mirador hacia Temuco. Ideal para caminatas cortas en familia.</p>
+                    <ul class="ficha">
+                        <li><strong>Distancia:</strong> 4,5 km ida y vuelta</li>
+                        <li><strong>Dificultad:</strong> Baja</li>
+                        <li><strong>Acceso:</strong> Liberado; confirmar horario en CONAF</li>
+                    </ul>
+                    <div class="aviso-seguridad">
+                        <strong>Seguridad:</strong> usa calzado antideslizante, lleva agua, no salgas del sendero y evita visitarlo cuando no haya luz natural.
+                    </div>
+                </div>
+            </article>
+
+            <article class="tarjeta tarjeta-ruta" data-dificultad="media" data-distancia="12">
+                <div class="tarjeta-img">
+                    <img src="../img/llaima-volcano-642125.webp" alt="Volcán y bosque de la zona andina">
+                    <div class="tarjeta-etiquetas">
+                        <span class="etiqueta etiqueta-tipo">Pucón</span>
+                        <span class="etiqueta etiqueta-oferta">Requiere planificación</span>
+                    </div>
+                    <span class="etiqueta etiqueta-duracion">5-6 h</span>
+                </div>
+                <div class="tarjeta-cuerpo">
+                    <h2>Parque Nacional Huerquehue</h2>
+                    <p>Ruta Los Lagos, con lagunas andinas y bosques de araucarias. Uno de los senderos clásicos de La Araucanía.</p>
+                    <ul class="ficha">
+                        <li><strong>Distancia:</strong> 12 km ida y vuelta</li>
+                        <li><strong>Dificultad:</strong> Media</li>
+                        <li><strong>Entrada:</strong> desde $4.000 adulto nacional (tarifa referencial CONAF)</li>
+                    </ul>
+                    <div class="aviso-seguridad">
+                        <strong>Seguridad:</strong> revisa el pronóstico, lleva abrigo y agua, registra tu ingreso y no te bañes en los lagos sin supervisión.
+                    </div>
+                </div>
+            </article>
+
+            <article class="tarjeta tarjeta-ruta" data-dificultad="alta" data-distancia="8">
+                <div class="tarjeta-img">
+                    <img src="../img/familia-camping.jpg" alt="Bosque y camping en la precordillera">
+                    <div class="tarjeta-etiquetas">
+                        <span class="etiqueta etiqueta-tipo">Conguillío</span>
+                        <span class="etiqueta etiqueta-oferta">Terreno volcánico</span>
+                    </div>
+                    <span class="etiqueta etiqueta-duracion">5 h</span>
+                </div>
+                <div class="tarjeta-cuerpo">
+                    <h2>Parque Nacional Conguillío</h2>
+                    <p>Sendero Sierra Nevada entre escoriales volcánicos y bosques de araucaria, con vistas al volcán Llaima.</p>
+                    <ul class="ficha">
+                        <li><strong>Distancia:</strong> 8 km ida y vuelta</li>
+                        <li><strong>Dificultad:</strong> Media-alta</li>
+                        <li><strong>Entrada:</strong> desde $4.000 adulto nacional (tarifa referencial CONAF)</li>
+                    </ul>
+                    <div class="aviso-seguridad">
+                        <strong>Seguridad:</strong> el terreno es irregular y pedregoso. Se recomienda guía, protección solar, agua abundante y respetar los senderos demarcados.
+                    </div>
+                </div>
+            </article>
+
+            <article class="tarjeta tarjeta-ruta" data-dificultad="alta" data-distancia="12">
+                <div class="tarjeta-img">
+                    <img src="../img/llaima-volcano-642125.webp" alt="Volcán con nieve en la cumbre">
+                    <div class="tarjeta-etiquetas">
+                        <span class="etiqueta etiqueta-tipo">Villarrica</span>
+                        <span class="etiqueta etiqueta-oferta">Solo con guía</span>
+                    </div>
+                    <span class="etiqueta etiqueta-duracion">8-10 h</span>
+                </div>
+                <div class="tarjeta-cuerpo">
+                    <h2>Volcán Villarrica</h2>
+                    <p>Ascenso al cráter por la ruta Rucapillán. Exige buena condición física y equipo técnico para nieve y hielo.</p>
+                    <ul class="ficha">
+                        <li><strong>Distancia:</strong> 12 km ida y vuelta</li>
+                        <li><strong>Dificultad:</strong> Alta</li>
+                        <li><strong>Precio:</strong> tours desde $85.000 por persona (valor referencial)</li>
+                    </ul>
+                    <div class="aviso-seguridad">
+                        <strong>Seguridad:</strong> sube únicamente con guía certificado y equipo adecuado. Revisa la alerta volcánica de SERNAGEOMIN y suspende la salida con mal clima.
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer id="contacto" class="pie">
+        <div class="pie-contenedor">
+            <div class="pie-columna">
+                <h4>Contáctanos</h4>
+                <ul>
+                    <li>
+                        <a href="https://instagram.com" target="_blank">
+                            <img src="../img/instagram.jpg" alt="Instagram" class="icono-red"> Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com" target="_blank">
+                            <img src="../img/facebook.jpg" alt="Facebook" class="icono-red"> Facebook
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="pie-columna">
+                <h4>Explora</h4>
+                <ul>
+                    <li><a href="rutas.html">Rutas</a></li>
+                    <li><a href="rutas.html">Senderos</a></li>
+                    <li><a href="../index.html#experiencias">Familia</a></li>
+                    <li><a href="../index.html#experiencias">Camping</a></li>
+                    <li><a href="emprendimientos.html">Emprendimientos</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">EcoRuta Temuco</p>
+    </footer>
+
+</body>
+</html>
