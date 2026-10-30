@@ -739,3 +739,242 @@ body{
         font-size: 3rem;
     }
 }
+/*---------------------------------PÁGINAS INTERNAS-----------------------------------------*/
+.pagina-interna::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(rgba(246, 248, 239, 0.55), rgba(246, 248, 239, 0.55)),
+                url("../img/araucania.jpg") center / cover no-repeat;
+}
+
+.pagina-interna > header,
+.pagina-interna > main,
+.pagina-interna > footer {
+    position: relative;
+    z-index: 1;
+}
+
+.pagina-interna > header {
+    z-index: 10;
+}
+
+.encabezado-pagina {
+    padding: 48px 24px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 20px;
+    background-image: linear-gradient(rgba(20, 45, 33, 0.55), rgba(20, 45, 33, 0.78)), url("../img/araucania.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 12px 28px rgba(18, 40, 24, 0.45);
+}
+
+.encabezado-pagina .presentacion-lugar {
+    margin-bottom: 12px;
+    color: #e9f5df;
+    border-color: rgba(233, 245, 223, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.encabezado-pagina h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+}
+
+.encabezado-pagina p {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 20px;
+    background-color: rgba(255, 255, 255, 0.94);
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(18, 40, 24, 0.12);
+}
+
+.filtros-grupo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.filtros-etiqueta {
+    color: #1f3d2b;
+    font-weight: 700;
+}
+
+.filtro {
+    padding: 8px 16px;
+    color: #1f3d2b;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background-color: #e3efd8;
+    border: 1px solid #c5dbb3;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.filtro:hover {
+    background-color: #d4e7c4;
+}
+
+.filtro.activo {
+    color: #ffffff;
+    background-color: #278030;
+    border-color: #278030;
+}
+
+.filtro-select {
+    padding: 8px 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #1f3d2b;
+    background-color: #ffffff;
+    border: 1px solid #c5dbb3;
+    border-radius: 12px;
+}
+
+.rejilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta-ruta .tarjeta-img img,
+.tarjeta-destino .tarjeta-img img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.tarjeta-emprendimiento .tarjeta-img img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.tarjeta-cuerpo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+}
+
+.tarjeta-cuerpo h2 {
+    margin: 0;
+    color: #1f3d2b;
+    font-size: 1.2rem;
+    line-height: 1.25;
+}
+
+.tarjeta-cuerpo > p {
+    margin: 0;
+    color: #5a6b60;
+    line-height: 1.45;
+}
+
+.ficha {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #3d5a47;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.ficha strong {
+    color: #1f3d2b;
+}
+
+.ficha a {
+    color: #1f7a24;
+    font-weight: 600;
+}
+
+.ficha a:hover {
+    color: #d4922a;
+}
+
+.aviso-seguridad {
+    margin-top: auto;
+    padding: 12px 14px;
+    color: #5a4a1f;
+    font-size: 0.92rem;
+    line-height: 1.45;
+    background-color: #fdf4df;
+    border-left: 4px solid #d4922a;
+    border-radius: 10px;
+}
+
+.aviso-seguridad strong {
+    color: #8a5a12;
+}
+
+.nota-tarifas {
+    margin: 0;
+    padding: 14px 18px;
+    color: #3d5a47;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(18, 40, 24, 0.2);
+}
+
+.sin-resultados {
+    margin: 0;
+    padding: 16px;
+    text-align: center;
+    font-weight: 600;
+    color: #1f3d2b;
+    background-color: rgba(255, 255, 255, 0.92);
+    border-radius: 14px;
+}
+
+.tarjeta[hidden] {
+    display: none !important;
+}
+
+.mensaje > p {
+    margin: 0 0 16px;
+    color: #3d5a47;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .encabezado-pagina {
+        padding: 36px 18px;
+    }
+
+    .filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filtros-grupo {
+        justify-content: flex-start;
+    }
+
+    .filtro-select {
+        flex: 1;
+    }
+
+    .rejilla {
+        grid-template-columns: 1fr;
+    }
+}
