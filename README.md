@@ -6,11 +6,11 @@ EcoRuta Temuco / Waylabs
 
 | Nombre | Rol ágil |
 |---|---|
-| Lucas Villegas | Product Owner |
-| Elias Cayuqueo | Scrum Master |
-| Piero Soto | QA/Tester |
-| Benjamín Alarcón | Developer |
-| Nicolás Calderón | Developer |
+| Lucas Villegas | Developer |
+| Elias Cayuqueo | Developer |
+| Piero Soto | Product Owner |
+| Benjamín Alarcón | Scrum Master |
+| Nicolás Calderón | QA/Tester |
 | Lucas Martinez | Developer |
 ## Descripción breve
 
@@ -35,8 +35,8 @@ npm run dev
 
 ## Estado del proyecto
 
-- Sprint actual: Sprint 0 (Kickoff)
-- Última actualización: 13/08/2026
+- Sprint actual: Sprint 2 (Kickoff)
+- Última actualización: 27/10/2026
 
 ## Tablero Kanban
 
@@ -44,4 +44,4 @@ Enlace al tablero: https://trello.com/invite/b/6a7e001cb03b372969548e75/ATTI488f
 
 ## Enlace de despliegue
 
-(agregar enlace una vez desplegado)
+https://benjamin-alarcon.github.io/EcoRuta-Temuco/
