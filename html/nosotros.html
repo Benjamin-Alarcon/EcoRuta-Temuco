@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CL">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros</title>
+    <title>Nosotros | EcoRuta Temuco</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="pagina-nosotros">
@@ -15,9 +15,9 @@
 
             <input type="checkbox" id="menu-toggle" hidden>
 
-            <label for="menu-toggle" id="menu-boton" role="button" aria-label="Abrir menu de navegacion">&#9776;</label>
+            <label for="menu-toggle" id="menu-boton" role="button" aria-label="Abrir menú de navegación" aria-controls="nav-lista">&#9776;</label>
 
-            <ul id="nav-lista">
+            <ul id="nav-lista" role="list">
                 <li class="boton-nav"><a href="../index.html#inicio">Inicio</a></li>
                 <li class="boton-nav"><a href="rutas.html">Rutas</a></li>
                 <li class="boton-nav"><a href="destinos.html">Destinos</a></li>
@@ -90,35 +90,35 @@
         </section>
     </main>
 
-    <footer id="contacto" class = "pie">
-        <div class = "pie-contenedor">
-            <div class = "pie-columna">
-                <h4>Contáctanos</h4>
-                <ul>
+    <footer id="contacto" class="pie">
+        <div class="pie-contenedor">
+            <nav class="pie-columna" aria-label="Redes sociales">
+                <h2>Contáctanos</h2>
+                <ul role="list">
                     <li>
-                        <a href="https://instagram.com" target="_blank">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                             <img src="../img/instagram.jpg" alt="Instagram" class="icono-red"> Instagram
                         </a>
                     </li>
                     <li>
-                        <a href="https://facebook.com" target="_blank">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                             <img src="../img/facebook.jpg" alt="Facebook" class="icono-red"> Facebook
                         </a>
                     </li>
                 </ul>
-            </div>
-            <div class="pie-columna">
-                <h4>Explora</h4>
-                <ul>
+            </nav>
+            <nav class="pie-columna" aria-label="Enlaces del sitio">
+                <h2>Explora</h2>
+                <ul role="list">
                     <li><a href="rutas.html">Rutas</a></li>
                     <li><a href="rutas.html">Senderos</a></li>
                     <li><a href="../index.html#experiencias">Familia</a></li>
                     <li><a href="../index.html#experiencias">Camping</a></li>
                     <li><a href="emprendimientos.html">Emprendimientos</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
-        <p class ="copyright">EcoRuta Temuco</p>
+        <p class="copyright">EcoRuta Temuco</p>
     </footer>
 </body>
 </html>

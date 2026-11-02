@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CL">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rutas y Senderos | EcoRuta Temuco</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../script/clima.js" defer></script>
 </head>
 <body class="pagina-interna">
     <header>
@@ -15,14 +16,14 @@
 
             <input type="checkbox" id="menu-toggle" hidden>
 
-            <label for="menu-toggle" id="menu-boton" role="button" aria-label="Abrir menu de navegacion">&#9776;</label>
+            <label for="menu-toggle" id="menu-boton" role="button" aria-label="Abrir menú de navegación" aria-controls="nav-lista">&#9776;</label>
 
-            <ul id="nav-lista">
+            <ul id="nav-lista" role="list">
                 <li class="boton-nav"><a href="../index.html#inicio">Inicio</a></li>
                 <li class="boton-nav"><a href="rutas.html" aria-current="page">Rutas</a></li>
+                <li class="boton-nav"><a href="destinos.html">Destinos</a></li>
                 <li class="boton-nav"><a href="../index.html#experiencias">Experiencias</a></li>
                 <li class="boton-nav"><a href="emprendimientos.html">Emprendimientos</a></li>
-                <li class="boton-nav"><a href="destinos.html">Destinos</a></li>
                 <li class="boton-nav"><a href="../index.html#packs">Packs</a></li>
                 <li class="boton-nav"><a href="nosotros.html">Nosotros</a></li>
                 <li class="boton-nav"><a href="../index.html#contacto">Contacto</a></li>
@@ -61,7 +62,7 @@
 
         <section class="rejilla" aria-label="Listado de rutas">
 
-            <article class="tarjeta tarjeta-ruta" data-dificultad="baja" data-distancia="4.5">
+            <article class="tarjeta tarjeta-ruta" data-dificultad="baja" data-distancia="4.5" data-lat="-38.7236" data-lon="-72.5883">
                 <div class="tarjeta-img">
                     <img src="../img/araucania.jpg" alt="Bosque nativo en La Araucanía">
                     <div class="tarjeta-etiquetas">
@@ -73,18 +74,37 @@
                 <div class="tarjeta-cuerpo">
                     <h2>Cerro Ñielol</h2>
                     <p>Sendero interpretativo con bosque nativo y mirador hacia Temuco. Ideal para caminatas cortas en familia.</p>
-                    <ul class="ficha">
-                        <li><strong>Distancia:</strong> 4,5 km ida y vuelta</li>
-                        <li><strong>Dificultad:</strong> Baja</li>
-                        <li><strong>Acceso:</strong> Liberado; confirmar horario en CONAF</li>
-                    </ul>
-                    <div class="aviso-seguridad">
+                    <dl class="ficha">
+                        <div><dt>Distancia:</dt> <dd>4,5 km ida y vuelta</dd></div>
+                        <div><dt>Dificultad:</dt> <dd>Baja</dd></div>
+                        <div><dt>Acceso:</dt> <dd>Liberado; confirmar horario en CONAF</dd></div>
+                    </dl>
+                    <section class="clima" aria-label="Clima en la ruta: Cerro Ñielol">
+                        <h3>Clima en la ruta</h3>
+                        <p class="clima-estado" aria-live="polite">Sin datos aún.</p>
+                        <dl class="clima-datos">
+                            <div>
+                                <dt>Temperatura</dt>
+                                <dd><strong class="clima-temperatura">--</strong></dd>
+                            </div>
+                            <div>
+                                <dt>Viento</dt>
+                                <dd><strong class="clima-viento">--</strong></dd>
+                            </div>
+                            <div>
+                                <dt>Cielo</dt>
+                                <dd><strong class="clima-cielo">--</strong></dd>
+                            </div>
+                        </dl>
+                        <p class="clima-aviso" hidden></p>
+                    </section>
+                    <p class="aviso-seguridad">
                         <strong>Seguridad:</strong> usa calzado antideslizante, lleva agua, no salgas del sendero y evita visitarlo cuando no haya luz natural.
-                    </div>
+                    </p>
                 </div>
             </article>
 
-            <article class="tarjeta tarjeta-ruta" data-dificultad="media" data-distancia="12">
+            <article class="tarjeta tarjeta-ruta" data-dificultad="media" data-distancia="12" data-lat="-39.1371" data-lon="-71.6591">
                 <div class="tarjeta-img">
                     <img src="../img/llaima-volcano-642125.webp" alt="Volcán y bosque de la zona andina">
                     <div class="tarjeta-etiquetas">
@@ -96,18 +116,37 @@
                 <div class="tarjeta-cuerpo">
                     <h2>Parque Nacional Huerquehue</h2>
                     <p>Ruta Los Lagos, con lagunas andinas y bosques de araucarias. Uno de los senderos clásicos de La Araucanía.</p>
-                    <ul class="ficha">
-                        <li><strong>Distancia:</strong> 12 km ida y vuelta</li>
-                        <li><strong>Dificultad:</strong> Media</li>
-                        <li><strong>Entrada:</strong> desde $4.000 adulto nacional (tarifa referencial CONAF)</li>
-                    </ul>
-                    <div class="aviso-seguridad">
+                    <dl class="ficha">
+                        <div><dt>Distancia:</dt> <dd>12 km ida y vuelta</dd></div>
+                        <div><dt>Dificultad:</dt> <dd>Media</dd></div>
+                        <div><dt>Entrada:</dt> <dd>desde $4.000 adulto nacional (tarifa referencial CONAF)</dd></div>
+                    </dl>
+                    <section class="clima" aria-label="Clima en la ruta: Parque Nacional Huerquehue">
+                        <h3>Clima en la ruta</h3>
+                        <p class="clima-estado" aria-live="polite">Sin datos aún.</p>
+                        <dl class="clima-datos">
+                            <div>
+                                <dt>Temperatura</dt>
+                                <dd><strong class="clima-temperatura">--</strong></dd>
+                            </div>
+                            <div>
+                                <dt>Viento</dt>
+                                <dd><strong class="clima-viento">--</strong></dd>
+                            </div>
+                            <div>
+                                <dt>Cielo</dt>
+                                <dd><strong class="clima-cielo">--</strong></dd>
+                            </div>
+                        </dl>
+                        <p class="clima-aviso" hidden></p>
+                    </section>
+                    <p class="aviso-seguridad">
                         <strong>Seguridad:</strong> revisa el pronóstico, lleva abrigo y agua, registra tu ingreso y no te bañes en los lagos sin supervisión.
-                    </div>
+                    </p>
                 </div>
             </article>
 
-            <article class="tarjeta tarjeta-ruta" data-dificultad="alta" data-distancia="8">
+            <article class="tarjeta tarjeta-ruta" data-dificultad="alta" data-distancia="8" data-lat="-38.6551" data-lon="-71.6847">
                 <div class="tarjeta-img">
                     <img src="../img/familia-camping.jpg" alt="Bosque y camping en la precordillera">
                     <div class="tarjeta-etiquetas">
@@ -119,18 +158,37 @@
                 <div class="tarjeta-cuerpo">
                     <h2>Parque Nacional Conguillío</h2>
                     <p>Sendero Sierra Nevada entre escoriales volcánicos y bosques de araucaria, con vistas al volcán Llaima.</p>
-                    <ul class="ficha">
-                        <li><strong>Distancia:</strong> 8 km ida y vuelta</li>
-                        <li><strong>Dificultad:</strong> Media-alta</li>
-                        <li><strong>Entrada:</strong> desde $4.000 adulto nacional (tarifa referencial CONAF)</li>
-                    </ul>
-                    <div class="aviso-seguridad">
+                    <dl class="ficha">
+                        <div><dt>Distancia:</dt> <dd>8 km ida y vuelta</dd></div>
+                        <div><dt>Dificultad:</dt> <dd>Media-alta</dd></div>
+                        <div><dt>Entrada:</dt> <dd>desde $4.000 adulto nacional (tarifa referencial CONAF)</dd></div>
+                    </dl>
+                    <section class="clima" aria-label="Clima en la ruta: Parque Nacional Conguillío">
+                        <h3>Clima en la ruta</h3>
+                        <p class="clima-estado" aria-live="polite">Sin datos aún.</p>
+                        <dl class="clima-datos">
+                            <div>
+                                <dt>Temperatura</dt>
+                                <dd><strong class="clima-temperatura">--</strong></dd>
+                            </div>
+                            <div>
+                                <dt>Viento</dt>
+                                <dd><strong class="clima-viento">--</strong></dd>
+                            </div>
+                            <div>
+                                <dt>Cielo</dt>
+                                <dd><strong class="clima-cielo">--</strong></dd>
+                            </div>
+                        </dl>
+                        <p class="clima-aviso" hidden></p>
+                    </section>
+                    <p class="aviso-seguridad">
                         <strong>Seguridad:</strong> el terreno es irregular y pedregoso. Se recomienda guía, protección solar, agua abundante y respetar los senderos demarcados.
-                    </div>
+                    </p>
                 </div>
             </article>
 
-            <article class="tarjeta tarjeta-ruta" data-dificultad="alta" data-distancia="12">
+            <article class="tarjeta tarjeta-ruta" data-dificultad="alta" data-distancia="12" data-lat="-39.4210" data-lon="-71.9396">
                 <div class="tarjeta-img">
                     <img src="../img/llaima-volcano-642125.webp" alt="Volcán con nieve en la cumbre">
                     <div class="tarjeta-etiquetas">
@@ -142,14 +200,33 @@
                 <div class="tarjeta-cuerpo">
                     <h2>Volcán Villarrica</h2>
                     <p>Ascenso al cráter por la ruta Rucapillán. Exige buena condición física y equipo técnico para nieve y hielo.</p>
-                    <ul class="ficha">
-                        <li><strong>Distancia:</strong> 12 km ida y vuelta</li>
-                        <li><strong>Dificultad:</strong> Alta</li>
-                        <li><strong>Precio:</strong> tours desde $85.000 por persona (valor referencial)</li>
-                    </ul>
-                    <div class="aviso-seguridad">
+                    <dl class="ficha">
+                        <div><dt>Distancia:</dt> <dd>12 km ida y vuelta</dd></div>
+                        <div><dt>Dificultad:</dt> <dd>Alta</dd></div>
+                        <div><dt>Precio:</dt> <dd>tours desde $85.000 por persona (valor referencial)</dd></div>
+                    </dl>
+                    <section class="clima" aria-label="Clima en la ruta: Volcán Villarrica">
+                        <h3>Clima en la ruta</h3>
+                        <p class="clima-estado" aria-live="polite">Sin datos aún.</p>
+                        <dl class="clima-datos">
+                            <div>
+                                <dt>Temperatura</dt>
+                                <dd><strong class="clima-temperatura">--</strong></dd>
+                            </div>
+                            <div>
+                                <dt>Viento</dt>
+                                <dd><strong class="clima-viento">--</strong></dd>
+                            </div>
+                            <div>
+                                <dt>Cielo</dt>
+                                <dd><strong class="clima-cielo">--</strong></dd>
+                            </div>
+                        </dl>
+                        <p class="clima-aviso" hidden></p>
+                    </section>
+                    <p class="aviso-seguridad">
                         <strong>Seguridad:</strong> sube únicamente con guía certificado y equipo adecuado. Revisa la alerta volcánica de SERNAGEOMIN y suspende la salida con mal clima.
-                    </div>
+                    </p>
                 </div>
             </article>
 
@@ -158,31 +235,31 @@
 
     <footer id="contacto" class="pie">
         <div class="pie-contenedor">
-            <div class="pie-columna">
-                <h4>Contáctanos</h4>
-                <ul>
+            <nav class="pie-columna" aria-label="Redes sociales">
+                <h2>Contáctanos</h2>
+                <ul role="list">
                     <li>
-                        <a href="https://instagram.com" target="_blank">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                             <img src="../img/instagram.jpg" alt="Instagram" class="icono-red"> Instagram
                         </a>
                     </li>
                     <li>
-                        <a href="https://facebook.com" target="_blank">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                             <img src="../img/facebook.jpg" alt="Facebook" class="icono-red"> Facebook
                         </a>
                     </li>
                 </ul>
-            </div>
-            <div class="pie-columna">
-                <h4>Explora</h4>
-                <ul>
+            </nav>
+            <nav class="pie-columna" aria-label="Enlaces del sitio">
+                <h2>Explora</h2>
+                <ul role="list">
                     <li><a href="rutas.html">Rutas</a></li>
                     <li><a href="rutas.html">Senderos</a></li>
                     <li><a href="../index.html#experiencias">Familia</a></li>
                     <li><a href="../index.html#experiencias">Camping</a></li>
                     <li><a href="emprendimientos.html">Emprendimientos</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
         <p class="copyright">EcoRuta Temuco</p>
     </footer>
