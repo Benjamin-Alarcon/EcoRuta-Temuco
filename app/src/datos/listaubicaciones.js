@@ -1,3 +1,6 @@
+import camping from '../assets/images.jpg';
+import volcan from '../assets/llaima-volcano-642125.webp';
+
 export const ubicaciones = [
   {
     id: 1,
