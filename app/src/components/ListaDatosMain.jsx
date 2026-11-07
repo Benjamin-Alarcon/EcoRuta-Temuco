@@ -1,4 +1,4 @@
-export default function ListaDatosMain(datos) {
+export default function ListaDatosMain({ datos }) {
    return (
       <section className="datos" aria-label="EcoRuta en números">
          {datos.map((dato) => (
