@@ -12,7 +12,7 @@ function App(){
       <Encabezado
         enlaces={["Inicio", "Rutas", "Destinos", "Experiencias", "Emprendimientos", "Packs", "Nosotros", "Contacto"]}
       />
-      <main>
+      <main className="contenido">
         <TarjetaBienvenida
           titulo = "Vive la Araucania de una forma diferente"
           subtitulo = "Canopy, rafting, cabalgatas, paintball y más experiencias en pucon, villarica, temuco y alrededores"
