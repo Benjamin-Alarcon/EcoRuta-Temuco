@@ -85,7 +85,7 @@ body{
     gap:20px;
     color: antiquewhite;
     border-radius: 20px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6)), url("/src/assets/araucania.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6)), url("./assets/araucania.jpg");
     background-size:cover;
     background-position:center;
     box-shadow: 0 12px 28px rgba(18, 40, 24, 0.45);
@@ -299,7 +299,7 @@ body{
     background-color: #1f3d2b;
     background-image:
         linear-gradient(90deg, rgba(20, 45, 33, .35) 0%, rgba(20, 45, 33, .84) 21%, rgba(20, 45, 33, .91) 50%, rgba(20, 45, 33, .86) 60%, rgba(20, 45, 33, .38) 80%, rgba(20, 45, 33, .19) 100%),
-        url("../img/paisaje-footer-araucania.png");
+        url("./assets/paisaje-footer-araucania.png");
     background-position: center, center 56%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -377,7 +377,7 @@ body{
     z-index: 0;
     pointer-events: none;
     background: linear-gradient(rgba(246, 248, 239, 0.42), rgba(246, 248, 239, 0.42)),
-                url("../img/araucania.jpg") center / cover no-repeat;
+                url("./assets/araucania.jpg") center / cover no-repeat;
 }
 
 .pagina-nosotros > header,
@@ -721,7 +721,7 @@ body{
     .pie {
         background-image:
             linear-gradient(rgba(20, 45, 33, .88), rgba(20, 45, 33, .88)),
-            url("../img/paisaje-footer-araucania.png");
+            url("./assets/paisaje-footer-araucania.png");
         background-position: center, right center;
     }
 }
@@ -747,7 +747,7 @@ body{
     z-index: 0;
     pointer-events: none;
     background: linear-gradient(rgba(246, 248, 239, 0.55), rgba(246, 248, 239, 0.55)),
-                url("../img/araucania.jpg") center / cover no-repeat;
+                url("./assets/araucania.jpg") center / cover no-repeat;
 }
 
 .pagina-interna > header,
@@ -766,7 +766,7 @@ body{
     text-align: center;
     color: #ffffff;
     border-radius: 20px;
-    background-image: linear-gradient(rgba(20, 45, 33, 0.55), rgba(20, 45, 33, 0.78)), url("../img/araucania.jpg");
+    background-image: linear-gradient(rgba(20, 45, 33, 0.55), rgba(20, 45, 33, 0.78)), url("./assets/araucania.jpg");
     background-size: cover;
     background-position: center;
     box-shadow: 0 12px 28px rgba(18, 40, 24, 0.45);
