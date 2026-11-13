@@ -1078,17 +1078,6 @@ body{
     font-weight: 600;
 }
 
-.creditos-imagenes ul {
-    margin: 0;
-    padding-left: 1.25rem;
-    color: #3d5a47;
-    line-height: 1.5;
-}
-
-.creditos-imagenes li + li {
-    margin-top: 6px;
-}
-
 .enlace-tarjeta {
     margin-top: auto;
     color: #1b5c22;
