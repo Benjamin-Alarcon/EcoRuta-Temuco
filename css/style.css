@@ -39,6 +39,19 @@ body {
     user-select: none;
 }
 
+#menu-toggle {
+    display: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #d4922a;
+    outline-offset: 3px;
+}
+
 #nav-lista {
     display: flex;
     flex-wrap: wrap;
@@ -204,6 +217,10 @@ body{
     margin: 0 0 2px 0;
     font-size: 1rem;
     color: #1f3d2b;
+}
+
+.tarjeta-texto h2 a {
+    color: inherit;
 }
 
 .tarjeta-texto p{
@@ -648,6 +665,19 @@ body{
         display: block;
     }
 
+    #menu-toggle {
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+    }
+
+    #menu-toggle:focus-visible + #menu-boton {
+        outline: 3px solid #ffffff;
+        outline-offset: 4px;
+    }
+
     #nav-lista{
         display: none;
         flex-direction: column;
@@ -1029,7 +1059,79 @@ body{
     line-height: 1.5;
 }
 
+.tarjeta-experiencia .tarjeta-img img,
+.tarjeta-pack .tarjeta-img img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.detalle-experiencia {
+    margin-top: auto !important;
+    padding-top: 8px;
+    border-top: 1px solid #c5dbb3;
+    font-size: 0.92rem;
+}
+
+.detalle-experiencia a,
+.mensaje a:not(.boton) {
+    color: #1b5c22;
+    font-weight: 600;
+}
+
+.enlace-tarjeta {
+    margin-top: auto;
+    color: #1b5c22;
+    font-weight: 700;
+}
+
+.contacto-panel {
+    display: grid;
+    grid-template-columns: minmax(200px, 0.8fr) minmax(0, 1.2fr);
+    gap: 32px;
+    align-items: start;
+}
+
+.contacto-intro p,
+.formulario-ayuda {
+    color: #3d5a47;
+    line-height: 1.5;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-formulario input,
+.campo-formulario textarea {
+    width: 100%;
+    padding: 12px;
+    font: inherit;
+    border: 1px solid #779b75;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+.campo-formulario small {
+    color: #3d5a47;
+}
+
+.contacto-panel .formulario-ayuda {
+    margin: 0;
+}
+
+.contacto-panel .mensaje-aviso {
+    color: #1f3d2b;
+    line-height: 1.45;
+}
+
 @media (max-width: 768px) {
+    .contacto-panel {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
     .encabezado-pagina {
         padding: 36px 18px;
     }

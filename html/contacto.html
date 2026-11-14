@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | EcoRuta Temuco</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../script/contacto.js" defer></script>
+</head>
+<body class="pagina-interna">
+    <header>
+        <nav id="cont-nav" aria-label="Navegación principal">
+            <a href="../index.html" id="logo-link"><img src="../img/logoEcoruta.png" alt="Logo EcoRuta Temuco" id="logo"></a>
+            <input type="checkbox" id="menu-toggle" aria-label="Mostrar menú de navegación" aria-controls="nav-lista">
+            <label for="menu-toggle" id="menu-boton" aria-hidden="true">&#9776; Menú</label>
+            <ul id="nav-lista" role="list">
+                <li class="boton-nav"><a href="../index.html#inicio">Inicio</a></li>
+                <li class="boton-nav"><a href="rutas.html">Rutas</a></li>
+                <li class="boton-nav"><a href="destinos.html">Destinos</a></li>
+                <li class="boton-nav"><a href="experiencias.html">Experiencias</a></li>
+                <li class="boton-nav"><a href="emprendimientos.html">Emprendimientos</a></li>
+                <li class="boton-nav"><a href="packs.html">Packs</a></li>
+                <li class="boton-nav"><a href="nosotros.html">Nosotros</a></li>
+                <li class="boton-nav"><a href="contacto.html" aria-current="page">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido">
+        <section class="encabezado-pagina" aria-labelledby="titulo-contacto">
+            <span class="presentacion-lugar">La Araucanía, Chile</span>
+            <h1 id="titulo-contacto">Contacto</h1>
+            <p>¿Tienes una consulta sobre el proyecto, una ruta o un emprendimiento local? Prepara tu mensaje aquí.</p>
+        </section>
+
+        <section class="mensaje contacto-panel" aria-labelledby="titulo-formulario">
+            <div class="contacto-intro">
+                <h2 id="titulo-formulario">Cuéntanos tu consulta</h2>
+                <p>El canal de mensajes aún está en preparación. Puedes revisar los campos de tu consulta, pero el formulario todavía no envía ni guarda información.</p>
+            </div>
+            <form id="form-contacto" class="mensaje-form" novalidate>
+                <div class="campo-formulario">
+                    <label for="contacto-nombre">Nombre <span aria-hidden="true">*</span></label>
+                    <input id="contacto-nombre" name="nombre" type="text" autocomplete="name" required minlength="2" maxlength="80" aria-describedby="ayuda-nombre">
+                    <small id="ayuda-nombre">Al menos 2 caracteres.</small>
+                </div>
+                <div class="campo-formulario">
+                    <label for="contacto-correo">Correo electrónico <span aria-hidden="true">*</span></label>
+                    <input id="contacto-correo" name="correo" type="email" autocomplete="email" required maxlength="120">
+                </div>
+                <div class="campo-formulario">
+                    <label for="contacto-asunto">Asunto <span aria-hidden="true">*</span></label>
+                    <input id="contacto-asunto" name="asunto" type="text" required minlength="3" maxlength="120" aria-describedby="ayuda-asunto">
+                    <small id="ayuda-asunto">Al menos 3 caracteres.</small>
+                </div>
+                <div class="campo-formulario">
+                    <label for="contacto-contenido">Contenido <span aria-hidden="true">*</span></label>
+                    <textarea id="contacto-contenido" name="contenido" rows="6" required minlength="10" maxlength="2000" aria-describedby="ayuda-contenido"></textarea>
+                    <small id="ayuda-contenido">Al menos 10 caracteres. No incluyas datos sensibles.</small>
+                </div>
+                <p class="formulario-ayuda">Todos los campos son obligatorios. La revisión no envía el mensaje.</p>
+                <button type="button" id="revisar-contacto" class="boton">Revisar mensaje</button>
+                <p id="aviso-contacto" class="mensaje-aviso" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="mensaje" aria-labelledby="contacto-mientras">
+            <h2 id="contacto-mientras">Mientras habilitamos el contacto</h2>
+            <p>Para planificar una visita, revisa las <a href="rutas.html">rutas</a>, <a href="destinos.html">destinos</a> y <a href="experiencias.html">experiencias</a>. Confirma condiciones vigentes con los recintos y operadores antes de viajar.</p>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <div class="pie-contenedor">
+            <div class="pie-columna"><h2>EcoRuta Temuco</h2><p>Ideas para conocer La Araucanía y sus emprendimientos locales.</p></div>
+            <nav class="pie-columna" aria-label="Enlaces del sitio"><h2>Explora</h2><ul role="list"><li><a href="rutas.html">Rutas</a></li><li><a href="experiencias.html">Experiencias</a></li><li><a href="packs.html">Packs</a></li><li><a href="nosotros.html">Nosotros</a></li></ul></nav>
+        </div>
+        <p class="copyright">EcoRuta Temuco</p>
+    </footer>
+</body>
+</html>
