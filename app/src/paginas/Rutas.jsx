@@ -1,21 +1,17 @@
 import { useState } from "react";
-
-const rutas = [
-  { id: 1, nombre: "Cerro Ñielol", dificultad: "baja" },
-  { id: 2, nombre: "Parque Nacional Huerquehue", dificultad: "media" },
-  { id: 3, nombre: "Parque Nacional Conguillío", dificultad: "alta" },
-  { id: 4, nombre: "Volcán Villarrica", dificultad: "alta" },
-];
+import ListaUbicaciones from "../components/ListaUbicaciones.jsx";
+import { ubicaciones } from "../datos/listaubicaciones.js";
 
 export default function Rutas() {
   const [dificultad, setDificultad] = useState("todas");
 
-  const visibles = dificultad === "todas"
-    ? rutas
-    : rutas.filter((ruta) => ruta.dificultad === dificultad);
+  const visibles =
+    dificultad === "todas"
+      ? ubicaciones
+      : ubicaciones.filter((ruta) => ruta.dificultad === dificultad);
 
   return (
-    <section>
+    <section className="contenido">
       <h1>Rutas y senderos</h1>
 
       <div className="filtros">
@@ -23,6 +19,7 @@ export default function Rutas() {
           <button
             key={opcion}
             type="button"
+            className="filtro"
             aria-pressed={dificultad === opcion}
             onClick={() => setDificultad(opcion)}
           >
@@ -31,11 +28,7 @@ export default function Rutas() {
         ))}
       </div>
 
-      <ul>
-        {visibles.map((ruta) => (
-          <li key={ruta.id}>{ruta.nombre} — {ruta.dificultad}</li>
-        ))}
-      </ul>
+      <ListaUbicaciones ubicaciones={visibles} titulo="Rutas y senderos" />
     </section>
   );
 }
