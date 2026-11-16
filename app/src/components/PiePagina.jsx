@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import instagram from "../assets/instagram.jpg";
 import facebook from "../assets/facebook.jpg";
 
@@ -32,11 +33,11 @@ export default function PiePagina() {
         <nav className="pie-columna" aria-label="Enlaces del sitio">
           <h2>Explora</h2>
           <ul role="list">
-            <li><a href="/html/rutas.html">Rutas</a></li>
-            <li><a href="/html/rutas.html">Senderos</a></li>
-            <li><a href="/#experiencias">Familia</a></li>
-            <li><a href="/#experiencias">Camping</a></li>
-            <li><a href="/html/emprendimientos.html">Emprendimientos</a></li>
+            <li><Link to="/rutas">Rutas</Link></li>
+            <li><Link to="/rutas">Senderos</Link></li>
+            <li><Link to="/experiencias">Familia</Link></li>
+            <li><Link to="/experiencias">Camping</Link></li>
+            <li><Link to="/emprendimientos">Emprendimientos</Link></li>
           </ul>
         </nav>
       </div>
