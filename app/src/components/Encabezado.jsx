@@ -4,9 +4,13 @@ import logoEcoruta from "../assets/logoEcoruta.png";
 const enlaces = [
   { texto: "Inicio", ruta: "/" },
   { texto: "Rutas", ruta: "/rutas" },
+  { texto: "Destinos", ruta: "/destinos" },
+  { texto: "Experiencias", ruta: "/experiencias" },
   { texto: "Emprendimientos", ruta: "/emprendimientos" },
+  { texto: "Packs", ruta: "/packs" },
+  { texto: "Nosotros", ruta: "/nosotros" },
+  { texto: "Contacto", ruta: "/contacto" },
 ];
-
 export default function Encabezado() {
   return (
     <header>

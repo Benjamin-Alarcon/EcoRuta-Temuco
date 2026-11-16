@@ -35,8 +35,8 @@ export default function PiePagina() {
           <ul role="list">
             <li><Link to="/rutas">Rutas</Link></li>
             <li><Link to="/rutas">Senderos</Link></li>
-            <li><Link to="/">Familia</Link></li>
-            <li><Link to="/">Camping</Link></li>
+            <li><Link to="/experiencias">Familia</Link></li>
+            <li><Link to="/experiencias">Camping</Link></li>
             <li><Link to="/emprendimientos">Emprendimientos</Link></li>
           </ul>
         </nav>
