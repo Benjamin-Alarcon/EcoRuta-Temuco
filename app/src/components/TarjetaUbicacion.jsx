@@ -1,4 +1,7 @@
+import { Link } from "react-router";
+
 export default function TarjetaUbicacion({
+  id,
   nombre,
   imagen,
   alt,
@@ -20,6 +23,7 @@ export default function TarjetaUbicacion({
       <div className="tarjeta-texto">
         <h2>{nombre}</h2>
         <p>{tipo} · {duracion}</p>
+        <Link to={`/rutas/${id}`}>Ver</Link>
       </div>
     </article>
   );
