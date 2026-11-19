@@ -1,0 +1,85 @@
+{
+  "rutas": [
+    {
+      "id": 1,
+      "nombre": "Cerro Ñielol",
+      "distanciaKm": 4.5,
+      "dificultad": "baja",
+      "accesible": true,
+      "descripcion": "Sendero interpretativo con bosque nativo y mirador hacia Temuco. Ideal para caminatas cortas en familia."
+    },
+    {
+      "id": 2,
+      "nombre": "Parque Nacional Huerquehue",
+      "distanciaKm": 12,
+      "dificultad": "media",
+      "accesible": true,
+      "descripcion": "Ruta Los Lagos, con lagunas andinas y bosques de araucarias. Uno de los senderos clásicos de La Araucanía."
+    },
+    {
+      "id": 3,
+      "nombre": "Parque Nacional Conguillío",
+      "distanciaKm": 8,
+      "dificultad": "alta",
+      "accesible": true,
+      "descripcion": "Sendero Sierra Nevada entre escoriales volcánicos y bosques de araucaria, con vistas al volcán Llaima."
+    },
+    {
+      "id": 4,
+      "nombre": "Volcán Villarrica",
+      "distanciaKm": 12,
+      "dificultad": "alta",
+      "accesible": false,
+      "descripcion": "Ascenso al cráter por la ruta Rucapillán. Exige buena condición física y equipo técnico para nieve y hielo."
+    },
+    {
+      "id": 5,
+      "nombre": "Nevados de Sollipulli",
+      "distanciaKm": 11.7,
+      "dificultad": "alta",
+      "accesible": true,
+      "descripcion": "Recorrido de alta montaña en la zona andina de La Araucanía, con paisajes de nieve y vistas hacia la laguna del volcán. Revisa las condiciones climáticas y el estado del sendero antes de salir."
+    }
+  ],
+  "emprendimientos": [
+    {
+      "id": 1,
+      "nombre": "Textilería Yovana Morales Huenchuman",
+      "correo": "ejemplo1@ejemplo.cl",
+      "descripcion": "Prendas y artículos decorativos en lana de oveja teñida con productos naturales. Cuenta con el Sello Manos Campesinas de INDAP.",
+      "numero": 900000001
+    },
+    {
+      "id": 2,
+      "nombre": "Cooperativa Taiñ Pewman",
+      "correo": "ejemplo2@ejemplo.cl",
+      "descripcion": "Agrupación de artesanas textiles de Toltén que trabaja el telar y los tintes naturales, comercializando sus creaciones de forma colectiva.",
+      "numero": 900000002
+    },
+    {
+      "id": 3,
+      "nombre": "La Rueka Gestión Creativa",
+      "correo": "ejemplo3@ejemplo.cl",
+      "descripcion": "Agrupación que acompaña a mujeres artesanas del textil de Pucón, Villarrica y Loncoche con formación, catálogos y difusión de sus obras.",
+      "numero": 900000003
+    }
+  ],
+  "mensajes": [
+    {
+      "id": 1,
+      "nombre": "Mensaje de prueba 1",
+      "correo": "prueba1@ejemplo.cl",
+      "asunto": "Prueba del endpoint POST /mensajes",
+      "contenido": "Mensaje de prueba para validar el contrato de la API. No corresponde a un envío real.",
+      "fecha": "2026-11-19T10:00:00"
+    },
+    {
+      "id": 2,
+      "nombre": "Mensaje de prueba 2",
+      "correo": "prueba2@ejemplo.cl",
+      "asunto": "Prueba del listado de mensajes",
+      "contenido": "Segundo mensaje de prueba para comprobar GET /mensajes y POST /mensajes.",
+      "fecha": "2026-11-19T11:30:00"
+    }
+  ]
+}
