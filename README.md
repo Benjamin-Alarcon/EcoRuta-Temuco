@@ -58,7 +58,6 @@ https://benjamin-alarcon.github.io/EcoRuta-Temuco/
 | `nombre` | string | Obligatorio. |
 | `distanciaKm` | number | Obligatorio, mayor que 0. |
 | `dificultad` | string | Obligatorio: `baja`, `media` o `alta`. |
-| `accesible` | boolean | Obligatorio. |
 | `descripcion` | string | Opcional. |
 
 Ejemplo:
