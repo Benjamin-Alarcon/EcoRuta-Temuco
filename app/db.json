@@ -3,6 +3,8 @@
     {
       "id": 1,
       "nombre": "Cerro Ñielol",
+      "imagen": "img/cerro-nielol.jpg",
+      "alt": "Bosque nativo, mirador y postal desde el cerro ñielol",
       "distanciaKm": 4.5,
       "dificultad": "baja",
       "accesible": true,
@@ -11,6 +13,8 @@
     {
       "id": 2,
       "nombre": "Parque Nacional Huerquehue",
+      "imagen": "img/llaima-volcano-642125.webp",
+      "alt": "Volcán y bosque de la zona andina",
       "distanciaKm": 12,
       "dificultad": "media",
       "accesible": true,
@@ -19,6 +23,8 @@
     {
       "id": 3,
       "nombre": "Parque Nacional Conguillío",
+      "imagen": "img/familia-camping.jpg",
+      "alt": "Bosque y camping en la precordillera",
       "distanciaKm": 8,
       "dificultad": "alta",
       "accesible": true,
@@ -27,6 +33,8 @@
     {
       "id": 4,
       "nombre": "Volcán Villarrica",
+      "imagen": "img/volcan-villarrica-ascenso.jpg",
+      "alt": "Personas haciendo cumbre en el volcán Villarrica",
       "distanciaKm": 12,
       "dificultad": "alta",
       "accesible": false,
@@ -35,10 +43,12 @@
     {
       "id": 5,
       "nombre": "Nevados de Sollipulli",
-      "distanciaKm": 11.7,
+      "imagen": "img/nevados-sollipulli.jpg",
+      "alt": "Glaciar dentro de la caldera de los Nevados de Sollipulli",
+      "distanciaKm": 10.8,
       "dificultad": "alta",
       "accesible": true,
-      "descripcion": "Recorrido de alta montaña en la zona andina de La Araucanía, con paisajes de nieve y vistas hacia la laguna del volcán. Revisa las condiciones climáticas y el estado del sendero antes de salir."
+      "descripcion": "Sendero exigente de alta montaña en Melipeuco, con vistas a la caldera y al glaciar del volcán Sollipulli."
     }
   ],
   "emprendimientos": [
