@@ -19,24 +19,39 @@ EcoRuta Temuco / Waylabs
 ## Tecnologías utilizadas
 
 - HTML5 / CSS3
-- JavaScript / TypeScript
-- (Framework a definir)
-- (API consumida)
+- JavaScript / JSX con React 19 y Vite 8
+- React Router para las rutas del sitio
+- json-server 0.17.4 como API propia local
+- Open-Meteo como API pública del clima
 
 ## Cómo ejecutar el proyecto
 
-```bash
-# Instalar dependencias
-npm install
+Desde la raíz del repositorio:
 
-# Ejecutar en modo desarrollo
+```bash
+cd app
+npm install
+```
+
+En una terminal, dentro de `app`, levantar la API:
+
+```bash
+npm run api
+```
+
+En otra terminal, también dentro de `app`, levantar la aplicación:
+
+```bash
 npm run dev
 ```
 
+La aplicación queda en `http://localhost:5173` y la API en `http://localhost:3001`.
+También puede usarse `npm ci` en lugar de `npm install` si se respeta el lockfile.
+
 ## Estado del proyecto
 
-- Sprint actual: Sprint 2 (Kickoff)
-- Última actualización: 27/10/2026
+- Sprint actual: Sprint 3 (Laboratorio 06 · integración de la aplicación con la API propia)
+- Última actualización: 23/11/2026
 
 ## Tablero Kanban
 
@@ -49,14 +64,18 @@ https://benjamin-alarcon.github.io/EcoRuta-Temuco/
 
 ## Contrato de API
 
-Para levantar la API local desde la raíz del repositorio:
+La API propia se levanta desde `app` con el script `api` definido en `app/package.json`
+(usa `json-server@0.17.4` con `--watch db.json --port 3001`):
 
 ```bash
 cd app
-npx json-server@0.17.4 --watch db.json --port 3001
+npm run api
 ```
 
-La API queda disponible en `http://localhost:3001`. Las operaciones de escritura modifican `app/db.json`.
+La API queda disponible en `http://localhost:3001`. Las operaciones de escritura
+modifican `app/db.json`, así que conviene respaldar ese archivo antes de probar
+`POST` o `DELETE`. El frontend obtiene la URL base desde `app/src/api.js`
+(`API_URL`); no la escribe directamente en las vistas.
 
 ### Recursos y modelos
 
@@ -142,13 +161,30 @@ Al crear un mensaje, el frontend envía `nombre`, `correo`, `asunto`, `contenido
 
 | Método | Endpoint | Envía el frontend | Responde la API | Código | Vista o componente |
 |---|---|---|---|---|---|
-| GET | `/rutas` | Nada | Arreglo de rutas | 200 | Inicio, Rutas |
-| GET | `/rutas/:id` | Nada | Una ruta | 200 o 404 | Detalle de ruta |
-| GET | `/emprendimientos` | Nada | Arreglo de emprendimientos | 200 | Emprendimientos, Administración |
-| POST | `/emprendimientos` | `nombre`, `correo`, `descripcion`, `numero` | Emprendimiento creado con su `id` | 201 | Administración |
-| DELETE | `/emprendimientos/:id` | Nada | `{}` | 200 o 404 | Administración |
-| GET | `/mensajes` | Nada | Arreglo de mensajes | 200 | Administración |
-| POST | `/mensajes` | `nombre`, `correo`, `asunto`, `contenido`, `fecha` | Mensaje creado con su `id` | 201 | Nosotros |
+| GET | `/rutas` | Nada | Arreglo de rutas | 200 | `Inicio.jsx`, `Rutas.jsx` |
+| GET | `/rutas/:id` | Nada | Una ruta | 200 o 404 | `DetalleRuta.jsx` |
+| GET | `/emprendimientos` | Nada | Arreglo de emprendimientos | 200 | `Emprendimientos.jsx`, `GestionEmprendimientos.jsx` |
+| POST | `/emprendimientos` | `nombre`, `correo`, `descripcion`, `numero` | Emprendimiento creado con su `id` | 201 | `FormularioEmprendimiento.jsx` |
+| DELETE | `/emprendimientos/:id` | Nada | `{}` | 200 o 404 | `GestionEmprendimientos.jsx` |
+| GET | `/mensajes` | Nada | Arreglo de mensajes | 200 | `ListaMensajes.jsx` en Administración |
+| POST | `/mensajes` | `nombre`, `correo`, `asunto`, `contenido`, `fecha` | Mensaje creado con su `id` | 201 | `Nosotros.jsx` |
+
+Las lecturas usan `fetch` dentro de `useEffect` con `API_URL`. No se implementó
+`DELETE /mensajes` porque el contrato no lo define. Tampoco se usan los recursos
+`resenas` ni campos como `rutaId`, `autor` o `nota`, que aparecen en el ejemplo del
+laboratorio pero no pertenecen a este proyecto.
+
+### Estado real de implementación
+
+- Los encargos A, B, C, D y E quedaron fusionados en `main` mediante los PR #31,
+  #32, #33, #34 y #35.
+- `AdministracionEmprendimientos.jsx` integra el formulario y la gestión de
+  emprendimientos. Al crear uno, `onCreado` incrementa un estado que recarga el
+  listado; la ruta `/administracion` se enlaza desde el pie de página.
+- `/nosotros` envía `POST /mensajes` con `nombre`, `correo`, `asunto`, `contenido` y
+  `fecha`; `/administracion` muestra los mensajes con `GET /mensajes`.
+- `app/db.json` conserva los datos originales; las pruebas de escritura se hacen
+  con respaldo y restauración.
 
 ### API pública externa
 
