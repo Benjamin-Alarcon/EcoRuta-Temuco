@@ -1056,3 +1056,101 @@ body{
   font-weight: bold;
   outline: 2px solid currentColor;
 }
+
+/* ---------- API propia (semana 12, integrador) ---------- */
+.estado {
+  color: #33443a;
+}
+
+.estado.error {
+  color: #a3261b;
+  font-weight: 700;
+}
+
+.tarjeta.detalle {
+  max-width: 640px;
+}
+
+.gestion-emprendimientos {
+  max-width: 640px;
+  margin-top: 24px;
+}
+
+.gestion-emprendimientos h3 {
+  font-size: 20px;
+  color: #1f5e3b;
+  margin-bottom: 12px;
+}
+
+.gestion-emprendimientos ul {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.emprendimiento-admin {
+  padding: 12px 14px;
+  border: 1px solid #e3e8e3;
+  border-radius: 10px;
+}
+
+.emprendimiento-admin span {
+  color: #b7791f;
+}
+
+.borrar {
+  margin-top: 6px;
+  padding: 4px 10px;
+  border: 1.5px solid #a3261b;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #a3261b;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.formulario {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 10px;
+  background: #f2f7f3;
+}
+
+.formulario h4 {
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.formulario label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+  padding: 8px 10px;
+  border: 1px solid #b9c7bc;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.formulario .boton {
+  justify-self: start;
+  margin-top: 8px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.formulario select:focus-visible,
+.formulario textarea:focus-visible {
+  outline: 3px solid #f9a826;
+  outline-offset: 2px;
+}
+
+.formulario .estado {
+  min-height: 1.4em;
+  font-size: 14px;
+}
