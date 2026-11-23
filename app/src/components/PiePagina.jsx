@@ -38,6 +38,7 @@ export default function PiePagina() {
             <li><Link to="/experiencias">Familia</Link></li>
             <li><Link to="/experiencias">Camping</Link></li>
             <li><Link to="/emprendimientos">Emprendimientos</Link></li>
+            <li><Link to="/administracion">Administración</Link></li>
           </ul>
         </nav>
       </div>
