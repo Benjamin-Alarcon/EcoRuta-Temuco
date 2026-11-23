@@ -1,62 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import manosArtesanas from "../assets/mision-nosotros.jpg";
-import tainPewman from "../../../img/tainpewman.jpg";
-import laRueka from "../../../img/la-rueca.jpg";
-
-const emprendimientos = [
-  {
-    id: 1,
-    nombre: "Textilería Yovana Morales Huenchuman",
-    tipo: "Textilería",
-    comuna: "Temuco",
-    imagen: manosArtesanas,
-    alt: "Manos trabajando en un taller artesanal",
-    descripcion:
-      "Prendas y artículos decorativos en lana de oveja teñida con productos naturales. Cuenta con el Sello Manos Campesinas de INDAP.",
-    ubicacion: "sector Monteverde, Temuco",
-    contacto: "Mercado INDAP Araucanía",
-    contactoUrl: "http://www.mercadoindaparaucania.cl/",
-    ruta: "Cerro Ñielol",
-  },
-  {
-    id: 2,
-    nombre: "Cooperativa Taiñ Pewman",
-    tipo: "Cooperativa",
-    comuna: "Toltén",
-    imagen: tainPewman,
-    alt: "Logo representativo de la cooperativa Taiñ Pewman",
-    descripcion:
-      "Agrupación de artesanas textiles de Toltén que trabaja el telar y los tintes naturales, comercializando sus creaciones de forma colectiva.",
-    ubicacion: "comuna de Toltén",
-    contacto: "Artesanías de Chile",
-    contactoUrl: "https://artesaniasdechile.cl/",
-    ruta: "circuitos de La Araucanía",
-  },
-  {
-    id: 3,
-    nombre: "La Rueka Gestión Creativa",
-    tipo: "Gestión creativa",
-    comuna: "Pucón",
-    imagen: laRueka,
-    alt: "Personas posando con artesanía local",
-    descripcion:
-      "Agrupación que acompaña a mujeres artesanas del textil de Pucón, Villarrica y Loncoche con formación, catálogos y difusión de sus obras.",
-    ubicacion: "Pucón, Villarrica y Loncoche",
-    contacto: "larueka.com",
-    contactoUrl: "https://larueka.com/",
-    ruta: "Parque Nacional Huerquehue",
-  },
-];
-
-const tipos = ["Todos", ...new Set(emprendimientos.map(({ tipo }) => tipo))];
+import { API_URL } from "../api.js";
 
 export default function Emprendimientos() {
-  const [tipo, setTipo] = useState("Todos");
-  const visibles =
-    tipo === "Todos"
-      ? emprendimientos
-      : emprendimientos.filter((emprendimiento) => emprendimiento.tipo === tipo);
+  const [emprendimientos, setEmprendimientos] = useState([]);
+  const [cargando, setCargando] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    async function cargarEmprendimientos() {
+      try {
+        const respuesta = await fetch(`${API_URL}/emprendimientos`);
+        if (!respuesta.ok) {
+          throw new Error(`La API respondió ${respuesta.status}`);
+        }
+        const datos = await respuesta.json();
+        setEmprendimientos(Array.isArray(datos) ? datos : []);
+      } catch {
+        setError(
+          "No se pudieron cargar los emprendimientos. ¿Está corriendo la API?",
+        );
+      } finally {
+        setCargando(false);
+      }
+    }
+    cargarEmprendimientos();
+  }, []);
+
+  if (cargando) {
+    return (
+      <p className="lista estado" role="status">
+        Cargando emprendimientos…
+      </p>
+    );
+  }
+
+  if (error) {
+    return (
+      <p className="lista estado error" role="alert">
+        {error}
+      </p>
+    );
+  }
 
   return (
     <div className="contenido">
@@ -69,60 +54,30 @@ export default function Emprendimientos() {
         </p>
       </section>
 
-      <section className="filtros" aria-label="Filtrar emprendimientos por tipo">
-        <div className="filtros-grupo">
-          <span className="filtros-etiqueta">Tipo:</span>
-          {tipos.map((opcion) => (
-            <button
-              key={opcion}
-              type="button"
-              className={`filtro${tipo === opcion ? " activo" : ""}`}
-              aria-pressed={tipo === opcion}
-              onClick={() => setTipo(opcion)}
-            >
-              {opcion}
-            </button>
-          ))}
-        </div>
+      <section className="filtros" aria-label="Resumen de emprendimientos">
         <span aria-live="polite">
-          {visibles.length} {visibles.length === 1 ? "emprendimiento" : "emprendimientos"}
+          {emprendimientos.length}{" "}
+          {emprendimientos.length === 1 ? "emprendimiento" : "emprendimientos"}
         </span>
       </section>
 
       <section className="rejilla" aria-label="Listado de emprendimientos">
-        {visibles.map((emprendimiento) => (
+        {emprendimientos.map((emprendimiento) => (
           <article key={emprendimiento.id} className="tarjeta tarjeta-emprendimiento">
-            <div className="tarjeta-img">
-              <img src={emprendimiento.imagen} alt={emprendimiento.alt} />
-              <div className="tarjeta-etiquetas">
-                <span className="etiqueta etiqueta-tipo">{emprendimiento.tipo}</span>
-                <span className="etiqueta etiqueta-destacada">{emprendimiento.comuna}</span>
-              </div>
-            </div>
             <div className="tarjeta-cuerpo">
               <h2>{emprendimiento.nombre}</h2>
               <p>{emprendimiento.descripcion}</p>
               <dl className="ficha">
                 <div>
-                  <dt>Ubicación:</dt> <dd>{emprendimiento.ubicacion}</dd>
-                </div>
-                <div>
-                  <dt>Contacto:</dt>{" "}
+                  <dt>Correo:</dt>{" "}
                   <dd>
-                    <a
-                      href={emprendimiento.contactoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {emprendimiento.contacto}
+                    <a href={`mailto:${emprendimiento.correo}`}>
+                      {emprendimiento.correo}
                     </a>
                   </dd>
                 </div>
                 <div>
-                  <dt>Ruta vinculada:</dt>{" "}
-                  <dd>
-                    <Link to="/rutas">{emprendimiento.ruta}</Link>
-                  </dd>
+                  <dt>Número:</dt> <dd>{emprendimiento.numero}</dd>
                 </div>
               </dl>
             </div>
