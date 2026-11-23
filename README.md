@@ -48,6 +48,16 @@ https://benjamin-alarcon.github.io/EcoRuta-Temuco/
 
 
 ## Contrato de API
+
+Para levantar la API local desde la raíz del repositorio:
+
+```bash
+cd app
+npx json-server@0.17.4 --watch db.json --port 3001
+```
+
+La API queda disponible en `http://localhost:3001`. Las operaciones de escritura modifican `app/db.json`.
+
 ### Recursos y modelos
 
 #### `rutas`
@@ -56,8 +66,11 @@ https://benjamin-alarcon.github.io/EcoRuta-Temuco/
 |---|---|---|
 | `id` | number | Lo genera el servidor. |
 | `nombre` | string | Obligatorio. |
+| `imagen` | string | Obligatorio. Ruta relativa al sitio estático, con prefijo `img/`. |
+| `alt` | string | Obligatorio. Texto alternativo de la imagen. |
 | `distanciaKm` | number | Obligatorio, mayor que 0. |
 | `dificultad` | string | Obligatorio: `baja`, `media` o `alta`. |
+| `accesible` | boolean | Obligatorio. |
 | `descripcion` | string | Opcional. |
 
 Ejemplo:
@@ -66,7 +79,9 @@ Ejemplo:
 {
   "id": 1,
   "nombre": "Cerro Ñielol",
-  "distanciaKm": 4,
+  "imagen": "img/cerro-nielol.jpg",
+  "alt": "Bosque nativo, mirador y postal desde el cerro ñielol",
+  "distanciaKm": 4.5,
   "dificultad": "baja",
   "accesible": true,
   "descripcion": "Sendero corto en el cerro"
