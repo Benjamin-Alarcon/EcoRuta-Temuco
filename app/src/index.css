@@ -1161,6 +1161,35 @@ body{
   gap: 16px;
 }
 
+.busqueda-destino {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.busqueda-destino label {
+  font-weight: 600;
+}
+
+.busqueda-destino select {
+  min-width: min(100%, 280px);
+  padding: 10px 12px;
+  border: 1px solid #b9c7bc;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.busqueda-destino .boton {
+  border: 0;
+  cursor: pointer;
+}
+
+.busqueda-destino .boton:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
 .tarjeta-osm .tarjeta-texto {
   display: flex;
   flex-direction: column;
