@@ -1154,3 +1154,43 @@ body{
   min-height: 1.4em;
   font-size: 14px;
 }
+
+.puntos-osm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.tarjeta-osm .tarjeta-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.tarjeta-osm h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #1f3d2b;
+}
+
+.tarjeta-osm p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.puntos-osm-coords {
+  font-weight: 700;
+}
+
+.tarjeta-osm a {
+  margin-top: auto;
+  color: #1b5c22;
+  font-weight: 700;
+}
+
+.puntos-osm-atribucion {
+  margin: 12px 0 0;
+  color: #5a6b60;
+  font-size: 0.8rem;
+}
