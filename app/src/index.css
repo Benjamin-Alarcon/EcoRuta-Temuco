@@ -1223,3 +1223,15 @@ body{
   color: #5a6b60;
   font-size: 0.8rem;
 }
+
+/* ---------- API externa y publicación (semana 13) ---------- */
+.aviso-publicacion {
+  margin: 1rem auto;
+  width: min(calc(100% - 2rem), 70rem);
+  padding: 0.875rem 1rem;
+  border: 1px solid #d6a447;
+  border-radius: 0.625rem;
+  background: #fff4ce;
+  color: #513600;
+  line-height: 1.5;
+}
