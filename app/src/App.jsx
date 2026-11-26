@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router";
+import AvisoPublicacion from "./components/AvisoPublicacion.jsx";
 import Encabezado from "./components/Encabezado.jsx";
 import PiePagina from "./components/PiePagina.jsx";
 import Inicio from "./paginas/Inicio.jsx";
@@ -18,6 +19,7 @@ function App() {
     <>
       <Encabezado />
       <main>
+        <AvisoPublicacion />
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/rutas" element={<Rutas />} />
