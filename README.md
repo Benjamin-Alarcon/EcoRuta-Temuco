@@ -193,3 +193,39 @@ El proyecto consulta la API de clima **Open-Meteo**:
 - Endpoint: `https://api.open-meteo.com/v1/forecast`
 - Parámetros: `latitude`, `longitude`, `current=temperature_2m,wind_speed_10m,weather_code` y `timezone=America/Santiago`.
 - Se usa para mostrar temperatura, velocidad del viento y condición del cielo en las tarjetas de rutas.
+
+### API externa de mapas (OpenStreetMap / Nominatim)
+
+- Servicio: geocodificación de Nominatim (OpenStreetMap). No es la API del clima.
+- Vista elegida: `Destinos`, sección "Lugares en OpenStreetMap" del componente `PuntosInteresOSM`.
+- Uso: mostrar el nombre completo, la latitud y la longitud de los destinos de La Araucanía (por ejemplo, Cerro Ñielol) y enlazar cada resultado a su ubicación en el mapa, como apoyo a la planificación de rutas.
+- Endpoint: `https://nominatim.openstreetmap.org/search?format=jsonv2&countrycodes=cl&q=Cerro%20%C3%91ielol%2C%20Temuco&limit=3`
+- Parámetros: `format=jsonv2`, `countrycodes=cl`, `q=Cerro Ñielol, Temuco` y `limit=3`.
+- No requiere clave ni token. La respuesta incluye `display_name`, `lat`, `lon`, `osm_type`, `osm_id` y `name`.
+- Se hace una sola petición por carga de la vista para respetar el límite de Nominatim (máximo 1 petición por segundo).
+- Los datos se muestran con la atribución obligatoria `© OpenStreetMap contributors` y enlace a la licencia ODbL.
+
+Prueba realizada desde el navegador (consola de la app local con Vite en marcha): la petición devolvió **HTTP 200**, sin errores de CORS (`Access-Control-Allow-Origin: *`), y el `fetch` pudo leer el JSON con 3 resultados:
+
+```js
+fetch("https://nominatim.openstreetmap.org/search?format=jsonv2&countrycodes=cl&q=Cerro%20%C3%91ielol%2C%20Temuco&limit=3")
+  .then((respuesta) => respuesta.json())
+  .then((datos) => console.log(datos))
+  .catch((error) => console.error(error));
+```
+
+| `display_name` | `lat` | `lon` |
+|---|---|---|
+| Cerro Ñielol, Hacienda Las Mariposas 2, Temuco, Provincia de Cautín, Región de la Araucanía, 4780764, Chile | -38.6998788 | -72.5515808 |
+| Cerro Ñielol, Condominio Las Mariposas 3, Temuco, Provincia de Cautín, Región de la Araucanía, 4780764, Chile | -38.6978954 | -72.5488937 |
+| Cerro Ñielol, Hacienda Las Mariposas 1, Temuco, Provincia de Cautín, Región de la Araucanía, 4780764, Chile | -38.6988077 | -72.5499259 |
+
+Prueba de falla: se bloqueó **solo** `nominatim.openstreetmap.org` en Chrome con `--host-resolver-rules="MAP nominatim.openstreetmap.org 127.0.0.1"`, sin detener Vite ni la API local. La vista `#/destinos` sigue visible con encabezado, título, texto y pie de página; dentro de su sección aparece:
+
+```html
+<p class="lista estado error" role="alert">
+  No se pudieron cargar los lugares de OpenStreetMap.
+</p>
+```
+
+No se renderizan tarjetas (`tarjeta-osm`) y las demás vistas no se ven afectadas. El error queda confinado al componente, no rompe la página.
