@@ -219,3 +219,13 @@ fetch("https://nominatim.openstreetmap.org/search?format=jsonv2&countrycodes=cl&
 | Cerro Ñielol, Hacienda Las Mariposas 2, Temuco, Provincia de Cautín, Región de la Araucanía, 4780764, Chile | -38.6998788 | -72.5515808 |
 | Cerro Ñielol, Condominio Las Mariposas 3, Temuco, Provincia de Cautín, Región de la Araucanía, 4780764, Chile | -38.6978954 | -72.5488937 |
 | Cerro Ñielol, Hacienda Las Mariposas 1, Temuco, Provincia de Cautín, Región de la Araucanía, 4780764, Chile | -38.6988077 | -72.5499259 |
+
+Prueba de falla: se bloqueó **solo** `nominatim.openstreetmap.org` en Chrome con `--host-resolver-rules="MAP nominatim.openstreetmap.org 127.0.0.1"`, sin detener Vite ni la API local. La vista `#/destinos` sigue visible con encabezado, título, texto y pie de página; dentro de su sección aparece:
+
+```html
+<p class="lista estado error" role="alert">
+  No se pudieron cargar los lugares de OpenStreetMap.
+</p>
+```
+
+No se renderizan tarjetas (`tarjeta-osm`) y las demás vistas no se ven afectadas. El error queda confinado al componente, no rompe la página.
