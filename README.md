@@ -198,12 +198,13 @@ El proyecto consulta la API de clima **Open-Meteo**:
 
 - Servicio: geocodificación de Nominatim (OpenStreetMap). No es la API del clima.
 - Vista elegida: `Destinos`, sección "Lugares en OpenStreetMap" del componente `PuntosInteresOSM`.
-- Uso: mostrar el nombre completo, la latitud y la longitud de los destinos de La Araucanía (por ejemplo, Cerro Ñielol) y enlazar cada resultado a su ubicación en el mapa, como apoyo a la planificación de rutas.
-- Endpoint: `https://nominatim.openstreetmap.org/search?format=jsonv2&countrycodes=cl&q=Cerro%20%C3%91ielol%2C%20Temuco&limit=3`
-- Parámetros: `format=jsonv2`, `countrycodes=cl`, `q=Cerro Ñielol, Temuco` y `limit=3`.
+- Uso: la persona elige uno de los destinos públicos de EcoRuta y pulsa «Buscar ubicación». Cambiar la selección y cargar la vista no consultan el servicio.
+- Endpoint por defecto: `https://nominatim.openstreetmap.org/search`; el proveedor compatible se cambia con `VITE_NOMINATIM_URL` en `app/.env.local`.
+- Parámetros: `format=jsonv2`, `countrycodes=cl`, `q=<destino>, Región de La Araucanía, Chile` y `limit=5`.
 - No requiere clave ni token. La respuesta incluye `display_name`, `lat`, `lon`, `osm_type`, `osm_id` y `name`.
-- Se hace una sola petición por carga de la vista para respetar el límite de Nominatim (máximo 1 petición por segundo).
-- Los datos se muestran con la atribución obligatoria `© OpenStreetMap contributors` y enlace a la licencia ODbL.
+- Los resultados se guardan por destino mientras la aplicación está abierta y se reutilizan al repetir la búsqueda. Las solicitudes se espacian al menos 1,1 segundos para respetar el máximo de una solicitud por segundo.
+- Los datos se muestran con la atribución `© OpenStreetMap contributors`, enlazada a `https://www.openstreetmap.org/copyright`, y bajo licencia ODbL.
+- La búsqueda externa no depende de json-server; solo se ejecuta después de pulsar el botón.
 
 Prueba realizada desde el navegador (consola de la app local con Vite en marcha): la petición devolvió **HTTP 200**, sin errores de CORS (`Access-Control-Allow-Origin: *`), y el `fetch` pudo leer el JSON con 3 resultados:
 
@@ -229,3 +230,13 @@ Prueba de falla: se bloqueó **solo** `nominatim.openstreetmap.org` en Chrome co
 ```
 
 No se renderizan tarjetas (`tarjeta-osm`) y las demás vistas no se ven afectadas. El error queda confinado al componente, no rompe la página.
+
+Verificación adicional en Chrome controlado por CDP, ya en la rama de corrección:
+
+- Al cargar `#/destinos` hay **0 peticiones** a Nominatim: la consulta solo ocurre al pulsar «Buscar ubicación».
+- Búsqueda normal de «Cerro Ñielol»: **1 petición**, **HTTP 200**, 4 tarjetas con nombre y enlace a `https://www.openstreetmap.org/...`, atribución «Datos © OpenStreetMap contributors, disponibles bajo licencia ODbL» visible y 0 mensajes de CORS en consola.
+- Repetir la misma búsqueda: **0 peticiones nuevas**; se reutilizan los 4 resultados en caché.
+- Sin coincidencias (respuesta `[]` simulada con CDP): aparece «No se encontraron lugares para Parque Nacional Huerquehue.» y no hay tarjetas.
+- Con solo `nominatim.openstreetmap.org` bloqueado desde CDP: se mantienen el encabezado, `<h1>Destinos</h1>` y el pie; dentro de la sección aparece el aviso de error y no se renderizan tarjetas.
+- Tras desbloquear Nominatim y detener json-server (puerto 3001 sin escucha), la búsqueda de «Volcán Villarrica» devolvió **HTTP 200** y 1 resultado, sin errores de CORS. La búsqueda externa no depende de la API local.
+- `npm run lint` y `npm run build` terminan correctamente.
